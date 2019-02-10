@@ -80,7 +80,10 @@ namespace WindowsFormsApp1
                 if (txtUsername.Text.Equals(sqlDataReader["username"].ToString())
                     && txtPassword.Text.Equals(sqlDataReader["password"].ToString()))
                 {
-                    MessageBox.Show("Login Success", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("Login Success", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MainMenu menuForm = new MainMenu();
+                    this.Hide();
+                    menuForm.ShowDialog();
                 }
                 else
                 {
