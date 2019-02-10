@@ -26,5 +26,42 @@ namespace WindowsFormsApp1
         {
             Application.Run(new SplashScreen());
         }
+
+        private void txtPassword_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserEnter(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Equals(@"Username"))
+            {
+                txtUsername.Text = "";
+            }
+        }
+
+        private void txtUserLeave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Equals(""))
+            {
+                txtUsername.Text = @"Username";
+            }
+        }
+
+        private void txtPassEnter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Equals(@"Password"))
+            {
+                txtPassword.Text = "";
+            }
+        }
+
+        private void txtPassLeave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Equals(""))
+            {
+                txtPassword.Text = @"Password";
+            }
+        }
     }
 }
