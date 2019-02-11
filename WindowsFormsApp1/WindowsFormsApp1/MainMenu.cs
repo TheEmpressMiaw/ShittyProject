@@ -24,6 +24,9 @@ namespace WindowsFormsApp1
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            Customer customer = new Customer();
+            this.Hide();
+            customer.ShowDialog();
 
         }
     }

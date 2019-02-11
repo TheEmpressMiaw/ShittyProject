@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Customer : Form
+    public partial class CustomerCreate : Form
     {
-        public Customer()
+        public CustomerCreate()
         {
             InitializeComponent();
         }
 
-        private void btnNewCus_Click(object sender, EventArgs e)
-        {
-            CustomerCreate customerCreate = new CustomerCreate();
-            this.Hide();
-            customerCreate.ShowDialog();
-        }
     }
 }

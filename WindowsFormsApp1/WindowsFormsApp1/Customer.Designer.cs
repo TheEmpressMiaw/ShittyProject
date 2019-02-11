@@ -105,6 +105,7 @@
             this.btnNewCus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNewCus.Textcolor = System.Drawing.Color.White;
             this.btnNewCus.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCus.Click += new System.EventHandler(this.btnNewCus_Click);
             // 
             // btnModify
             // 
