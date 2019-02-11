@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class MainMenu : Form
+    public partial class Customer : Form
     {
-        public MainMenu()
+        public Customer()
         {
             InitializeComponent();
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
