@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
             Thread.Sleep(5000);
             InitializeComponent();
             splashThread.Abort();
+            this.BringToFront();
             sqlconn.ConnectionString = @"Data Source=SERVER2016;Initial Catalog=HotelMS;Integrated Security=True";
         }
         
