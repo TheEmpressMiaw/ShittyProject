@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public Reservation()
         {
             InitializeComponent();
+            sqlconn.ConnectionString = @"Data Source=SERVER2016;Initial Catalog=HotelMS;Integrated Security=True";
         }
 
         private void btnNewRes_Click(object sender, EventArgs e)
@@ -77,6 +78,39 @@ namespace WindowsFormsApp1
             DialogResult result = inputBox.ShowDialog();
             input = textBox.Text;
             return result;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String email = "Email ID";
+            ShowInputDialog(ref email);
+            sqlcmd.Connection = sqlconn;
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "DELETE FROM Reservation WHERE Email = @newEmail";
+            sqlcmd.Parameters.AddWithValue("@newEmail", email);
+
+            try
+            {
+                sqlconn.Open();
+                int recordsAffected = sqlcmd.ExecuteNonQuery();
+                if (recordsAffected > 0)
+                {
+                    MessageBox.Show("Reservation Cancelled", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Closed += (s, args) => this.Close();
+                    mainMenu.Show();
+                }
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Unable to Delete Reservation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
         }
     }
 }
