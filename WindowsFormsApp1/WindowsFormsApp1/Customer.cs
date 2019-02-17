@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         SqlCommand sqlcmd = new SqlCommand();
 
         public static string input = "Enter Email ID";
+
         public Customer()
         {
             InitializeComponent();

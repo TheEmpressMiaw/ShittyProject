@@ -71,6 +71,18 @@
     <Compile Include="CustomerCreate.Designer.cs">
       <DependentUpon>CustomerCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomCreate.Designer.cs">
+      <DependentUpon>RoomCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room.Designer.cs">
+      <DependentUpon>Room.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservationCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerCreate.resx">
       <DependentUpon>CustomerCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomCreate.resx">
+      <DependentUpon>RoomCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room.resx">
+      <DependentUpon>Room.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationCreate.resx">
       <DependentUpon>ReservationCreate.cs</DependentUpon>
