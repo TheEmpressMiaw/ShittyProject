@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Reservation : Form
+    public partial class ReservationCreate : Form
     {
-        public Reservation()
+        public ReservationCreate()
         {
             InitializeComponent();
         }
 
-        private void btnNewRes_Click(object sender, EventArgs e)
+        private void dpCheckIn_onValueChanged(object sender, EventArgs e)
         {
-            ReservationCreate reservationCreate = new ReservationCreate();
-            this.Hide();
-            reservationCreate.ShowDialog();
+
         }
     }
 }

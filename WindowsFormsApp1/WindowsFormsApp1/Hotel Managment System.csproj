@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.8.0.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=1.8.0.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\..\..\bunifu\Bunifu UI WinForms 1.8.0.1\Bunifu UI WinForms 1.8.0.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
@@ -66,6 +71,18 @@
     <Compile Include="CustomerCreate.Designer.cs">
       <DependentUpon>CustomerCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservationCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationCreate.Designer.cs">
+      <DependentUpon>ReservationCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="SendMail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +115,9 @@
     <EmbeddedResource Include="CustomerCreate.resx">
       <DependentUpon>CustomerCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReservationCreate.resx">
+      <DependentUpon>ReservationCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendMail.resx">
       <DependentUpon>SendMail.cs</DependentUpon>
     </EmbeddedResource>
