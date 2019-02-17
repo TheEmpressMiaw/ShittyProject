@@ -36,5 +36,12 @@ namespace WindowsFormsApp1
             this.Hide();
             reservation.ShowDialog();
         }
+
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            Room room = new Room();
+            this.Hide();
+            room.ShowDialog();
+        }
     }
 }
