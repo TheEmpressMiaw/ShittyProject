@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,14 @@ namespace WindowsFormsApp1
 {
     public partial class Customer : Form
     {
+        SqlConnection sqlconn = new SqlConnection();
+        SqlCommand sqlcmd = new SqlCommand();
+
         public static string input = "Enter Email ID";
         public Customer()
         {
             InitializeComponent();
+            sqlconn.ConnectionString = @"Data Source=SERVER2016;Initial Catalog=HotelMS;Integrated Security=True";
         }
 
         private void btnNewCus_Click(object sender, EventArgs e)
@@ -31,6 +36,39 @@ namespace WindowsFormsApp1
             CustomerCreate customerCreate = new CustomerCreate();
             this.Hide();
             customerCreate.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String email = "Email ID";
+            ShowInputDialog(ref email);
+            sqlcmd.Connection = sqlconn;
+            sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandText = "DELETE FROM Customer WHERE Email = @newEmail";
+            sqlcmd.Parameters.AddWithValue("@newEmail", email);
+
+            try
+            {
+                sqlconn.Open();
+                int recordsAffected = sqlcmd.ExecuteNonQuery();
+                if (recordsAffected > 0)
+                {
+                    MessageBox.Show("Customer Deleted", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Closed += (s, args) => this.Close();
+                    mainMenu.Show();
+                }
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Unable to Delete Customer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlconn.Close();
+            }
         }
 
         private static DialogResult ShowInputDialog(ref string input)
