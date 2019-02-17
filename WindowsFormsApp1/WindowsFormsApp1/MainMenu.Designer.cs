@@ -125,6 +125,7 @@
             this.btnReservation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnReservation.Textcolor = System.Drawing.Color.White;
             this.btnReservation.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
             // btnRoom
             // 

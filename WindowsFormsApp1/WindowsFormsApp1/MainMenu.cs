@@ -29,5 +29,12 @@ namespace WindowsFormsApp1
             customer.ShowDialog();
 
         }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            Reservation reservation = new Reservation();
+            this.Hide();
+            reservation.ShowDialog();
+        }
     }
 }
