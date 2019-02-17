@@ -119,6 +119,7 @@
             this.btnModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnModify.Textcolor = System.Drawing.Color.White;
             this.btnModify.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // panel2
             // 
