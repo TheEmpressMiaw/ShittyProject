@@ -40,7 +40,7 @@
             this.dpCheckOut = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.labelEmail = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtRoomNo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtRoom = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,6 +99,7 @@
             this.btnReserve.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReserve.Textcolor = System.Drawing.Color.White;
             this.btnReserve.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // txtPrice
             // 
@@ -209,28 +210,28 @@
             this.labelEmail.TabIndex = 14;
             this.labelEmail.Text = "Email";
             // 
-            // txtRoomNo
+            // txtRoom
             // 
-            this.txtRoomNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtRoomNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtRoomNo.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtRoomNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRoomNo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtRoomNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRoomNo.HintForeColor = System.Drawing.Color.Empty;
-            this.txtRoomNo.HintText = "";
-            this.txtRoomNo.isPassword = false;
-            this.txtRoomNo.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtRoomNo.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtRoomNo.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtRoomNo.LineThickness = 3;
-            this.txtRoomNo.Location = new System.Drawing.Point(355, 265);
-            this.txtRoomNo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRoomNo.MaxLength = 32767;
-            this.txtRoomNo.Name = "txtRoomNo";
-            this.txtRoomNo.Size = new System.Drawing.Size(121, 33);
-            this.txtRoomNo.TabIndex = 17;
-            this.txtRoomNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRoom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtRoom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtRoom.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRoom.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtRoom.HintForeColor = System.Drawing.Color.Empty;
+            this.txtRoom.HintText = "";
+            this.txtRoom.isPassword = false;
+            this.txtRoom.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtRoom.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtRoom.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtRoom.LineThickness = 3;
+            this.txtRoom.Location = new System.Drawing.Point(355, 265);
+            this.txtRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRoom.MaxLength = 32767;
+            this.txtRoom.Name = "txtRoom";
+            this.txtRoom.Size = new System.Drawing.Size(121, 33);
+            this.txtRoom.TabIndex = 17;
+            this.txtRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel5
             // 
@@ -247,7 +248,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(625, 373);
-            this.Controls.Add(this.txtRoomNo);
+            this.Controls.Add(this.txtRoom);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.labelEmail);
@@ -282,7 +283,7 @@
         private Bunifu.Framework.UI.BunifuDatepicker dpCheckOut;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtEmail;
         private Bunifu.Framework.UI.BunifuCustomLabel labelEmail;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRoomNo;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRoom;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
     }
 }
