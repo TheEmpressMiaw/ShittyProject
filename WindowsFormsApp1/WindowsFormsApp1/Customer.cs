@@ -111,5 +111,13 @@ namespace WindowsFormsApp1
             input = textBox.Text;
             return result;
         }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            SendMail sendMail = new SendMail();
+            this.Hide();
+            sendMail.ShowDialog();
+
+        }
     }
 }

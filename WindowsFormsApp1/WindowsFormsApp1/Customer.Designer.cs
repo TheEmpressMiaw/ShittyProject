@@ -86,6 +86,7 @@
             this.btnMail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMail.Textcolor = System.Drawing.Color.White;
             this.btnMail.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
             // btnDelete
             // 
