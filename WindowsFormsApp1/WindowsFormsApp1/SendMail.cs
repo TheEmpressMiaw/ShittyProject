@@ -25,13 +25,13 @@ namespace WindowsFormsApp1
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                mail.From = new MailAddress("iamtiredofthisagain@gmail.com");
+                mail.From = new MailAddress("htmangmt@gmail.com");
                 mail.To.Add(txtToAddress.Text);
                 mail.Subject = txtSubject.Text;
                 mail.Body = txtBody.Text;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("iamtiredofthisagain", "FuckThisShit");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("htmangmt", "H0tel4901");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
