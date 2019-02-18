@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -110,6 +113,75 @@ namespace WindowsFormsApp1
             finally
             {
                 sqlconn.Close();
+            }
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(PageSize.A4);
+
+            try
+            {
+
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(
+                  Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Report.pdf", FileMode.Create));
+                doc.Open();
+                PdfPTable tbl = new PdfPTable(6);
+
+                tbl.AddCell("ID");
+                tbl.AddCell("Check In");
+                tbl.AddCell("Check Out");
+                tbl.AddCell("Price");
+                tbl.AddCell("Room");
+                tbl.AddCell("Email");
+
+                BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
+                var fnt = new iTextSharp.text.Font(bf, 13.0f, 1, BaseColor.BLUE);
+
+
+                sqlcmd.Connection = sqlconn;
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.CommandText = "SELECT * FROM Reservation";
+
+                try
+                {
+                    sqlconn.Open();
+                    using (SqlDataReader dr = sqlcmd.ExecuteReader())
+                    {
+                        //Loop through all the rows, retrieving the columns you need.
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                tbl.AddCell(dr["ID"].ToString());
+                                tbl.AddCell(dr["CheckIn"].ToString());
+                                tbl.AddCell(dr["CheckOut"].ToString());
+                                tbl.AddCell(dr["Price"].ToString());
+                                tbl.AddCell(dr["Room"].ToString());
+                                tbl.AddCell(dr["Email"].ToString());
+                            }
+                        }
+                    }
+
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Unable to Generate Report", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    sqlconn.Close();
+
+                    doc.Add(tbl);
+                    doc.Close();
+                    System.Diagnostics.Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Report.pdf");
+                    MessageBox.Show("Report Generated", "Congrats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ae)
+            {
+                MessageBox.Show(ae.Message);
             }
         }
     }
