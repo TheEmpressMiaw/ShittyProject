@@ -88,5 +88,12 @@ namespace WindowsFormsApp1
             this.Hide();
             room.ShowDialog();
         }
+
+        private void btnSorting_Click(object sender, EventArgs e)
+        {
+            Sorting sorting = new Sorting();
+            this.Hide();
+            sorting.ShowDialog();
+        }
     }
 }

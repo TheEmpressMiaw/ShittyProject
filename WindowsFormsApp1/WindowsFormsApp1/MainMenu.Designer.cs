@@ -34,6 +34,7 @@
             this.btnReservation = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRoom = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPayment = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSorting = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,12 +200,49 @@
             this.btnPayment.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
+            // btnSorting
+            // 
+            this.btnSorting.Active = false;
+            this.btnSorting.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSorting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSorting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSorting.BorderRadius = 0;
+            this.btnSorting.ButtonText = "Sorting";
+            this.btnSorting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSorting.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSorting.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSorting.Iconimage = null;
+            this.btnSorting.Iconimage_right = null;
+            this.btnSorting.Iconimage_right_Selected = null;
+            this.btnSorting.Iconimage_Selected = null;
+            this.btnSorting.IconMarginLeft = 0;
+            this.btnSorting.IconMarginRight = 0;
+            this.btnSorting.IconRightVisible = true;
+            this.btnSorting.IconRightZoom = 0D;
+            this.btnSorting.IconVisible = true;
+            this.btnSorting.IconZoom = 90D;
+            this.btnSorting.IsTab = false;
+            this.btnSorting.Location = new System.Drawing.Point(224, 311);
+            this.btnSorting.Name = "btnSorting";
+            this.btnSorting.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSorting.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnSorting.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSorting.selected = false;
+            this.btnSorting.Size = new System.Drawing.Size(178, 48);
+            this.btnSorting.TabIndex = 7;
+            this.btnSorting.Text = "Sorting";
+            this.btnSorting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSorting.Textcolor = System.Drawing.Color.White;
+            this.btnSorting.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSorting.Click += new System.EventHandler(this.btnSorting_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(641, 411);
+            this.Controls.Add(this.btnSorting);
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.btnRoom);
             this.Controls.Add(this.btnReservation);
@@ -227,5 +265,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnReservation;
         private Bunifu.Framework.UI.BunifuFlatButton btnRoom;
         private Bunifu.Framework.UI.BunifuFlatButton btnPayment;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSorting;
     }
 }
